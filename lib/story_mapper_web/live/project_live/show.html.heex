@@ -1,0 +1,13 @@
+<.header>
+  Project <%= @project.id %>
+  <:subtitle>This is a project record from your database.</:subtitle>
+</.header>
+
+<.list>
+  <:item title="Title"><%= @project.title %></:item>
+</.list>
+<%= for story <- @stories do %>
+  <p><%= story.title %></p>
+<% end %>
+
+<.back navigate={~p"/projects"}>Back to projects</.back>

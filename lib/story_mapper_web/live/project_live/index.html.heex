@@ -1,0 +1,20 @@
+<.header>
+  Listing Projects
+
+</.header>
+
+<.table
+  id="projects"
+  rows={@streams.projects}
+  row_click={fn {_id, project} -> JS.navigate(~p"/projects/#{project}") end}
+>
+  <:col :let={{_id, project}} label="Title"><%= project.title %></:col>
+  <:action :let={{_id, project}}>
+    <div class="sr-only">
+      <.link navigate={~p"/projects/#{project}"}>Show</.link>
+    </div>
+  </:action>
+ 
+</.table>
+
+
